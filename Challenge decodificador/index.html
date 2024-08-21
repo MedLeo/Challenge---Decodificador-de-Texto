@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/reset.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <title>Decodificador de Texto - Challenge One/Alura</title>
+</head>
+
+<body>
+    
+    <header class="header">
+        <a id="logodaAlura">
+            <img src="assets/img/logoAlura.svg" alt="Logo da Alura">
+        </a>         
+    </header>
+    <H1 class="tituloTexto">Decodificador de Texto</H1>
+
+    <main>     
+        
+        <section class="secaoBotoes">
+            <H2 class="digiteMinusculas">Digite seu texto com letras minúsculas, <br>sem espaço e sem acentos</H2>           
+            <input type="text" id="textoCodificado" placeholder="Digite ou cole" oninput="this.value=this.value.replace(/[^a-z]/g,'')" style="font-size: 38px;">
+            <input name="resposta" id="textoDecodificado"  cols="100" rows="10"></textarea>
+            <div class="btnAcoes">
+                <input type="button" value="CODIFICAR" id="botaoCodificar">
+                <input type="button" value="COPIAR" id="botaoCopiar">
+                <button id="botaoColar" onclick="colar()">COLAR</button>
+                <input type="button" value="DECODIFICAR" id="botaoDecodificar">
+            </div>
+        </section>   
+
+        <section class="secaoImagem">
+            <div class="imagemGarotoLupa">
+                <img src="assets/img/bonecoLupa.svg" alt="garoto com uma lupa">
+            </div>
+        </section>
+                     
+    </main>
+    
+</body>     
+
+<script>
+    let btn = document.querySelector("#botaoCodificar");
+    btn.onclick = codificar;
+    let btn2 = document.querySelector("#botaoCopiar");
+    btn2.onclick = copiar;
+    let btn3 = document.querySelector("#botaoColar");
+    btn3.onclick = colar;
+    let btn4 = document.querySelector("#botaoDecodificar");
+    btn4.onclick = decodificar;
+</script>
+
+<footer class="footer">
+    <span class="footer__texto">
+        <p>Feito por MedLeo</p>
+    </span>
+</footer>   
+</html>
